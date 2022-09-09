@@ -1,23 +1,11 @@
-// HelloWorld_two.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// HWorld.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
 
 int main()
 {
-	bool b1 = true;
-	bool b2 = false;
-	std::cout << "!b1 = " << !b1 << "\n";//отрицание
-	std::cout << "b1 && b2 = " << (b1 && b2) << "\n";//логическое "И"
-	std::cout << "b1 || b2 = " << (b1 || b2) << "\n";//логическое "ИЛИ"
-	std::cout << "b1 && b2 || b1 = " << (b1 && b2 || b1) << "\n";
-
-	int x = 5;
-	int y = 7;
-	std::cout << "x < y = " << (x < y) << "\n";
-
-	bool b3 = (x > y + 15) && (true && !(15 < 7));
-	std::cout << "b3 = " << b3 << "\n";
+    std::cout << "Hello World!\n";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
