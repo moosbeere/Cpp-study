@@ -1,22 +1,11 @@
-// HWorld.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// Variables-two.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
-#include <Windows.h>
 
 int main()
 {
     std::cout << "Hello World!\n";
-	int z = 10;
-	std::cout << "x / z = " << 12.0 / 10.0 << "\n";
-	//x = x + 3;
-	//x += 3;
-	std::cout << "x % z = " << x % z << "\n";
-	std::cout << "x + z * x = " << x + z * x << "\n";
-	std::cout << "(x + z) * x = " << (x + z) * x << "\n";
-	std::cout << "z << 1 = " << (z << 1) << "\n";
-
-
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
