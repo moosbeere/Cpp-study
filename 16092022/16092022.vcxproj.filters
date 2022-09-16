@@ -15,31 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Class.cpp">
+    <ClCompile Include="16092022.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Clothes_New.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Characteristic.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Enum.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Description.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Clothes_New.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Characteristic.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Description.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
