@@ -27,13 +27,122 @@ void printArray(int* begin, int* end) {
     }
 }
 
+const int col = 2;
+void printArray2(int (* array)[col], int rows) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < col; j++) {
+            cout << array[i][j] << " ";
+        }
+        cout << "\n";
+    }
+}
+void test(const int* array) {
+    //array[1] = 30;ошибка
+}
+
+void function1() {
+    cout << "function1\n";
+}
+
+void function2() {
+    cout << "function2\n";
+}
+
+float sum(float a, float b) {
+    return a + b;
+}
+float sub(float a, float b) {
+    return a - b;
+}
+
+int getMaxOrMin(int array[], int length, bool (*compare)(int x, int y)) {
+    int max = array[0];
+    for (int i = 0; i < length; i++) {
+        if (compare(array[i], max)) max = array[i];
+    }
+    return max;
+}
+bool max(int x, int y) {
+    return x > y;
+}
+
+bool min(int x, int y) {
+    return x < y;
+}
+
+void numberPositive() {
+    cout << "+\n";
+}
+void numberNegative() {
+    cout << "-\n";
+}
+
+void (*function(int x))() {
+    if (x > 0) return numberPositive;
+    else return numberNegative;
+}
+
+int* test() {
+    return new int(7);
+}
+
 int main()
 
 {
+    int* ob = new int(5);
+    cout << *ob << "\n";
+    delete ob;
+
+    int* t = test();
+    delete t;
+
+    int* array = new int[3] {1, 2, 3};
+    for (int* i = array; i < &array[3]; i++) {
+        cout << *i<<" ";
+    }
+    delete[] array;
+
+    /*void (*pf)() = function(-5);
+    pf();
+    pf = function(5);
+    pf();
+
+
+    /*int array[] = {1,22,3,24,5};
+    cout << getMaxOrMin(array, 5, max);
+    separator();
+    cout << getMaxOrMin(array, 5, min);
+
+    /*float a = 10;
+    float b = 4.4;
+
+    float (*operation)(float, float);
+    operation = sum;
+    cout << operation(a, b)<<" ";
+    operation = sub;
+    cout << operation(a, b);
+    separator();
+    void (*pf)();
+    pf = function1;
+    pf();
+    pf = function2;
+    pf();
+    void (*pfs[])() = {function1, function2};
+    pfs[0]();
+    pfs[1]();
+    separator();
     int array[] = { 1, 3, 5, 7 };
     int length = sizeof(array) / sizeof(array[0]);
-    // printArray(array, length);
-    printArray(array, length);
+    //printArray(array, &array[length]);
+    printArray(std::begin(array), std::end(array));
+    separator();
+    int mArray[][2] = { {1,2},{3,4}, {5,6} };
+    printArray2(mArray, 3);
+    separator();
+    test(array);
+    printArray(std::begin(array), std::end(array));
+
+
 
     /* int* pointer;
      int a = 25;
