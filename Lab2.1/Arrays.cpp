@@ -2,12 +2,16 @@
 //
 
 #include <iostream>
-using namespace std;
+//using namespace std;
+using std::cout;
+using std::cin;
+using std::endl;
 
-int i = 20;//глобальые переменные
+
+//int i = 20;//глобальые переменные
 
 //void hello(int i);//функции
-//функции и ссылки
+/*функции и ссылки
 int mult2(const int& x) {
     int mult = x * 2;
     return mult;
@@ -18,10 +22,77 @@ void divWithRemainder(int& a, int& b) {
     a = div;
     b = rem;
 }
+*/
+/*static variables
+void test() {
+    static int x = 0;
+    x++;
+    cout << x << "\n";
+}
+*/
+/*Macros
+#define PI 3.14;
+#define CIRCLE_AREA(r) r*r*PI;// 3+5*3+5*3.14
+#define CIRCLE_AREA2(r) (r)*(r)*PI; //(3+5)*(3+5)*3.14
+#define RECTANGLE_AREA(a,b) a = a*b;
+#define CALL(t, a, b) T##t##(a,b);
+bool TMin(int a, int b) {
+    return a < b;
+}
+bool TMax(int a, int b) {
+    return a > b;
+}
+
+float circleArea(float x) {
+    return x * x * PI;
+}
+void separator() {
+    cout << "\n--------\n";
+}
+*/
+#include "MyMath.h"
+#include "MySpace.h"
+using namespace MySpace;
+double MySpace::x = 26;
 
 int main()
 {   
-    //функцции и ссылки
+    int a = 4;
+    int b = 5;
+    cout << sum(a, b) << endl;
+    cout << sub(a, b) << endl;
+    cout << MySpace::div(a, b) << endl;
+    cout<<mult(a, b)<<endl;
+    x = 34;
+    test();
+    cin.get();
+   
+    /*Macros
+    cout << CALL(Min, 4, 5);
+    separator();
+    cout<<CALL(Max, 4, 5);
+    separator();
+    int a = 3;
+    int b = 5;
+    RECTANGLE_AREA(a, b);
+    cout << a;
+    separator();
+    cout << CIRCLE_AREA(a + b);
+    separator();
+    cout << CIRCLE_AREA2(a+b);
+    separator();
+#define PRT(s) cout<<s<<"\n";
+    PRT("hello");
+    */
+    //separator();
+    //cout << circleArea(2);
+    //cout << PI;
+    /*static variables
+    test();
+    test();
+    test();
+    test();
+    /*функцции и ссылки
     int x = 2;
     cout << mult2(x) << "\n";
     cout << mult2(x) << "\n";
