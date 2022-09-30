@@ -7,9 +7,143 @@ void separator() {
     cout << "\n--------------\n";
 }
 
+void printArray(int array[], int length) {
+    cout << *array<<"\n";
+    //int length = sizeof(array) / sizeof(array[0]);
+    cout << "length = "<< length << "\n";
+    for (int i = 0; i < length; i++) {
+        cout << *(array + i) << " ";
+    }
+}
+
+void printArray(int* begin, int* end) {
+    for (int* p = begin; p < end; p++) cout << *p << " ";
+}
+
+const int cols = 2;
+void printArray2(int (*array)[cols], int rows) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cout << array[i][j] << " ";
+        }
+        cout << "\n";
+    }
+}
+
+void test(int* array[]) {
+    *array[3] = 10;
+}
+
+void function1() {
+    cout << "function 1"<<"\n";
+}
+
+void function2() {
+    cout << "function 2" << "\n";
+}
+
+float add(float a, float b) {
+    return a + b;
+}
+
+float sub(float a, float b) {
+    return a - b;
+}
+
+int getMaxOrMin(int array[], int length, bool (*compare)(int, int)) {
+    int max = array[0];
+    for (int i = 0; i < length; i++) {
+        if (compare(array[i], max)) max = array[i];
+    }
+    return max;
+}
+
+bool max(int a, int b) {
+    return a > b ? true : false;
+}
+
+bool min(int a, int b) {
+    return a < b ? true : false;
+}
+
+
+
+void numberPositive() {
+    cout << " + ";
+}
+void numberNegative() {
+    cout << " - ";
+}
+
+void (*function(int x))() {
+    if (x > 0) return numberPositive;
+    else return numberNegative;
+}
+
+int* test() {
+    int* i = new int(3);// утечка памяти при вызове функции, если внутри функции не освободить память
+    return new int(5);
+}
+
 int main()
 {
-    const float PI = 3.14;
+    int* pc1 = new int(7);
+    cout << *pc1 << "\n";
+    delete pc1;
+
+    int* pntr = test();
+    cout << pntr << "\n";
+    delete pntr;
+
+
+    int* array = new int[3] {1, 2, 4};
+    for (int* i = array; i < array + 3; i++) {
+        cout << *i << " ";
+    }
+    delete[] array; 
+    
+    /*void (*test)() = function(-5);
+    test();
+
+
+
+    /*int array[] = {18, 12, 1, 7, 10};
+    cout << "max = " << getMaxOrMin(array, 5, max);
+    separator();
+    cout << "min = " << getMaxOrMin(array, 5, min);
+
+    /*float (*operation)(float, float);
+    operation = add;
+    cout << operation(1.2, 3.4)<<"\n";
+    operation = sub;    
+    cout << operation(5, 3.4);
+
+    /*void (*pf)();
+    pf = function1;
+    pf();
+    void(*pfs[])() { function1, function2 };
+    pf = function1;
+    pfs[0]();
+    pfs[1]();
+
+    /*
+    int array[][2] = {{1,2}, {3, 4}, {5, 6}};
+    printArray2(array, 3);
+
+    int arr[] = { 1,2,3,4 };
+
+    
+
+    /*int array[] = {1,4,5,6};
+    int length = sizeof(array) / sizeof(*array);
+    printArray(array, length);
+    separator();
+    printArray(array, &array[length]);
+    separator();
+   // cout << std::end(array)<<"\n";
+    printArray(std::begin(array), std::end(array));
+
+   /* const float PI = 3.14;
     const float G = 9.8;
 
     const float* pointer = &PI;
