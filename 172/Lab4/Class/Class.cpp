@@ -14,7 +14,7 @@ public:
     Monster() {
         name = "Spider";
         health = 20;
-        damage = 1;
+        damage = 15;
     }
     /*Monster(string name, int health, int damage) {
         this->name = name;
