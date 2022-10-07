@@ -2,55 +2,9 @@
 //
 
 #include <iostream>
+#include "Monster.h"
+
 using namespace std;
-
-class Monster1 {
-public:
-    string name;
-    int health;
-    int damage;
-    float maxHealth;
-    //int* i = new int(5);
-
-    Monster() {
-        name = "Spider";
-        health = 40;
-        damage = 3;
-    }
-
-    /*Monster(string name, int health, int damage) {
-        this->name = name;
-        this->health = health;
-        this->damage = damage;
-    }*/
-
-    Monster(string name, int health, int damage, float maxHealth) : name(name), health(health), damage(damage), maxHealth(maxHealth) {}
-
-    //Monster() : Monster(name, health, damage) {};
-
-    ~Monster() {
-       // cout << this->name << " delete!" << endl;
-        //delete i;
-    }
-
-    int getLevel() {
-        return maxHealth / 5;
-    }
-    void applyDamage(int damage) {
-        health -= damage;
-    }
-
-    void applyDamage() {
-        applyDamage(1);
-    }
-    void recovery() {
-        health = maxHealth;
-    }
-
-    void attack(Monster* m) {
-        m->health = m->health - damage;
-    }
-};
 
 int main()
 {
