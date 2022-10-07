@@ -4,12 +4,13 @@
 #include <iostream>
 using namespace std;
 
-class Monster {
+class Monster1 {
 public:
     string name;
     int health;
     int damage;
-    int* i = new int(5);
+    int maxHealth;
+    //int* i = new int(5);
 
     Monster() {
         name = "Spider";
@@ -22,12 +23,32 @@ public:
         this->damage = damage;
     }*/
 
-    Monster(string name, int health, int damage) : name(name), health(health), damage(damage) {}
+    Monster(string name, int health, int damage, int maxHealth) : name(name), health(health), damage(damage), maxHealth(maxHealth) {}
     //Monster() : Monster(name, health, damage) {}
 
     ~Monster() {
-        cout << this->name << " уничтожен!"<< endl;
-        delete i;
+        // cout << this->name << " уничтожен!"<< endl;
+         //delete i;
+    }
+
+    int getLevel() {
+        return maxHealth / 5;
+    }
+
+    void applyDamage(int damage) {
+        health -= damage;
+    }
+
+    void applyDamage() {
+        applyDamage(5);
+    }
+
+    void recovery() {
+        health = maxHealth;
+    }
+
+    void attack(Monster* m) {
+        m->health = m->health - damage;
     }
 
 };
@@ -35,6 +56,24 @@ public:
 int main()
 {
     setlocale(LC_ALL, "");
+    //Task 2
+    Monster goblin("Goblin", 20, 3, 50);
+    cout<<goblin.getLevel()<<endl;
+    goblin.applyDamage(10);
+    cout << goblin.health<<endl;
+    goblin.applyDamage();
+    cout << goblin.health << endl;
+    goblin.recovery();
+    cout << goblin.health << endl;
+
+    Monster spider("Spider", 30, 5, 35);
+    goblin.attack(&spider);
+    cout << spider.health << endl;
+
+
+
+
+    /*Task 1 
     Monster m;
     m.name = "Goblin";
     m.health = 10;
