@@ -14,6 +14,8 @@ protected:
     string name;
     void printWarning(string msg);
 public:
+    static int counter;
+    static void resetCounter();
     Monster();
     Monster(string name, int health, int damage, int maxHealth);
 

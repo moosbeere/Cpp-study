@@ -7,10 +7,16 @@
     }*/
 
 
-Monster::Monster(string name, int health, int damage, int maxHealth) : name(name), health(health), damage(damage), maxHealth(maxHealth) {}   
+Monster::Monster(string name, int health, int damage, int maxHealth) : name(name), health(health), damage(damage), maxHealth(maxHealth) {
+    counter++;
+}   
 void Monster::printWarning(string msg)
 {
     cout << msg << endl;
+}
+void Monster::resetCounter()
+{
+        counter = 0;
 }
 Monster::Monster() : Monster("Spider", 20, 15, 50) {}
     Monster::~Monster() {

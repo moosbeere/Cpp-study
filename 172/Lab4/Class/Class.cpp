@@ -11,9 +11,12 @@ void test(Monster& m) {
     cout << m.name << endl;
 }
 
+int Monster::counter = 0;
+
 int main()
 {
     setlocale(LC_ALL, "");
+
     //Task4
     Monster m1 = Monster();
     m1.setHealth(-10);
@@ -25,6 +28,13 @@ int main()
     ai.move(&m1);
     m1.setHealth(0);
     ai.move(&m1);
+
+    Monster m2;
+    Monster m3;
+    Monster m4;
+    cout << Monster::counter << endl;
+    Monster::resetCounter();
+    cout << Monster::counter << endl;
 
 
 
