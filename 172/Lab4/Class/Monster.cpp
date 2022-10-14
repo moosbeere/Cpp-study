@@ -47,3 +47,10 @@ Monster::Monster() : Monster("Spider", 20, 15, 50) {}
     void Monster::attack(Monster* m) {
         m->health = m->health - damage;
     }
+
+    /*void test(Monster& m)
+    {
+        cout << m.name << endl;
+        cout << m.health << endl;
+    }
+    */

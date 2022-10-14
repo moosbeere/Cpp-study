@@ -3,7 +3,13 @@
 
 #include <iostream>
 #include "Monster.h"
+#include "AIMonster.h"
 using namespace std;
+
+void test(Monster& m) {
+    cout << m.getHealth() << endl;
+    cout << m.name << endl;
+}
 
 int main()
 {
@@ -13,6 +19,13 @@ int main()
     m1.setHealth(-10);
     cout << m1.getHealth() << endl;
     //m1.printWarning();ошибка доступа
+    test(m1);
+
+    AIMonster ai;
+    ai.move(&m1);
+    m1.setHealth(0);
+    ai.move(&m1);
+
 
 
     /*//Task 2

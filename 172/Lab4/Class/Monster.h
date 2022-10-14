@@ -4,6 +4,9 @@ using namespace std;
 
 class Monster
 {
+    friend void test(Monster& m);
+    friend class AIMonster;
+
     int health;
     int damage;
     int maxHealth;
