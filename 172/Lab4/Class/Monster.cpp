@@ -1,13 +1,14 @@
 #include "Monster.h"
 
-    Monster::Monster() {
+    /*Monster::Monster() {
         name = "Spider";
         health = 20;
         damage = 15;
-    }
+    }*/
 
-    Monster::Monster(string name, int health, int damage, int maxHealth) : name(name), health(health), damage(damage), maxHealth(maxHealth) {}
-   
+
+Monster::Monster(string name, int health, int damage, int maxHealth) : name(name), health(health), damage(damage), maxHealth(maxHealth) {}   
+Monster::Monster() : Monster("Spider", 20, 15, 50) {}
     Monster::~Monster() {
     }
 
