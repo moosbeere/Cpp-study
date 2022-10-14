@@ -8,19 +8,27 @@ using namespace std;
 int main()
 {
     setlocale(LC_ALL, "");
-    //Task 2
+    //Task4
+    Monster m1 = Monster();
+    m1.setHealth(-10);
+    cout << m1.getHealth() << endl;
+    //m1.printWarning();ошибка доступа
+
+
+    /*//Task 2
     Monster goblin("Goblin", 20, 3, 50);
     cout<<goblin.getLevel()<<endl;
     goblin.applyDamage(10);
-    cout << goblin.health<<endl;
+    cout << goblin.getHealth() << endl;
     goblin.applyDamage();
-    cout << goblin.health << endl;
+    cout << goblin.getHealth() << endl;
     goblin.recovery();
-    cout << goblin.health << endl;
+    cout << goblin.getHealth() << endl;
 
     Monster spider("Spider", 30, 5, 35);
     goblin.attack(&spider);
-    cout << spider.health << endl;
+    cout << spider.getHealth() << endl;*/
+
 
 
 

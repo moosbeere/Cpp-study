@@ -4,16 +4,20 @@ using namespace std;
 
 class Monster
 {
-public:
-    string name;
     int health;
     int damage;
     int maxHealth;
-    
+protected:
+    string name;
+    void printWarning(string msg);
+public:
     Monster();
     Monster(string name, int health, int damage, int maxHealth);
 
     ~Monster();
+
+    int getHealth();
+    void setHealth(int health);
 
     int getLevel();
 

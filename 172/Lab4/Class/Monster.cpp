@@ -8,8 +8,24 @@
 
 
 Monster::Monster(string name, int health, int damage, int maxHealth) : name(name), health(health), damage(damage), maxHealth(maxHealth) {}   
+void Monster::printWarning(string msg)
+{
+    cout << msg << endl;
+}
 Monster::Monster() : Monster("Spider", 20, 15, 50) {}
     Monster::~Monster() {
+    }
+
+    int Monster::getHealth()
+    {
+        return this->health;
+    }
+
+    void Monster::setHealth(int health)
+    {
+        if (health > this->maxHealth) this->health = maxHealth;
+        else if (health < 0) printWarning("Вы ввели отрицательное число!");
+        else this->health = health;
     }
 
     int Monster::getLevel() {
