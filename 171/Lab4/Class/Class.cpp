@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Monster.h"
 #include "AIMonster.h"
+#include "FlyMonster.h"
 
 using namespace std;
 
@@ -13,10 +14,41 @@ void test(Monster& m) {
 }
 
 int Monster::counter = 0;
+
 int main()
 {
     setlocale(LC_ALL, "");
-    //4 Task
+    //Lab5 Task 1
+    Monster m;
+   // m.print();
+    cout << "\n------------\n";
+    FlyMonster fly;
+   // cout << fly.getHealth()<<endl;
+    //fly.fly();
+   // cout << fly.getHealth() << endl;
+    //fly.setHealth(-10);
+    //fly.print();
+
+    Monster m2 = FlyMonster("Dragon", 20, 3, 30, 10);
+   // m2.print();
+
+    Monster monsters[] = { Monster(), FlyMonster(), FlyMonster() };
+    for (Monster m : monsters) {
+        m.print();
+    }
+    cout << "\n------------\n";
+    Monster* pmonsters[] = { new Monster(), new FlyMonster(), new FlyMonster() };
+    for (Monster* m : pmonsters) {
+        m->print();
+    }
+    cout << "\n------------\n";
+
+    FlyMonster fly2("Dragon 2", 10, 3, 20, 10);
+    FlyMonster f3 = fly + fly2;
+    f3.print();
+
+
+    /*//4 Task
     Monster m1;
     m1.setHealth(60);
     cout << m1.getHealth() << endl;
@@ -33,7 +65,7 @@ int main()
     cout << Monster::counter << endl;
     Monster::resetCounter();
     cout << Monster::counter << endl;
-
+    */
     /*
     //Second Task
     Monster goblin("Goblin", 20, 3, 50);

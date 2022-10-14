@@ -5,14 +5,20 @@ using namespace std;
 class Monster{
     friend class AIMonster;
 private:
-    string name;
     int health;
     int damage;
     float maxHealth;
 
 protected:
+    string name;
     void printWarning(string msg);
 public:
+    virtual void print(){ //final{
+        cout << name << endl;
+        cout << health << endl;
+        cout << damage << endl;
+        cout << maxHealth << endl;
+    }
     static void resetCounter() {
         counter = 0;
     }
