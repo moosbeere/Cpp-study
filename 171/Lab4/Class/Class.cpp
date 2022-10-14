@@ -3,11 +3,38 @@
 
 #include <iostream>
 #include "Monster.h"
+#include "AIMonster.h"
 
 using namespace std;
 
+void test(Monster& m) {
+    cout << m.name << endl;
+    cout << m.health << endl;
+}
+
+int Monster::counter = 0;
 int main()
 {
+    setlocale(LC_ALL, "");
+    //4 Task
+    Monster m1;
+    m1.setHealth(60);
+    cout << m1.getHealth() << endl;
+    m1.setHealth(0);
+
+    test(m1);
+    AIMonster a1;
+    a1.move(&m1);
+
+    Monster m2;
+    Monster m3;
+    Monster m4;
+    Monster m5;
+    cout << Monster::counter << endl;
+    Monster::resetCounter();
+    cout << Monster::counter << endl;
+
+    /*
     //Second Task
     Monster goblin("Goblin", 20, 3, 50);
     Monster spider("Spider", 10, 3, 10);
@@ -29,7 +56,7 @@ int main()
     goblin.attack(&spider);
     cout << spider.name << " " << spider.health << endl;
 
-
+    */
 
     /*First Task
     Monster goblin;
