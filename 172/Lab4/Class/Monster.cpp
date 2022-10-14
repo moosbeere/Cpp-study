@@ -18,6 +18,10 @@ void Monster::resetCounter()
 {
         counter = 0;
 }
+void Monster::print()
+{
+    cout << name << " " << health << " " << damage <<" "<< maxHealth << endl;
+}
 Monster::Monster() : Monster("Spider", 20, 15, 50) {}
     Monster::~Monster() {
     }

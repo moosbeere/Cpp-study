@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Monster.h"
 #include "AIMonster.h"
+#include "FlyMonster.h"
 using namespace std;
 
 void test(Monster& m) {
@@ -16,6 +17,22 @@ int Monster::counter = 0;
 int main()
 {
     setlocale(LC_ALL, "");
+    //Lab5 Task 1
+    FlyMonster fly;
+    cout << fly.getHealth() << endl;
+    cout << fly.getFlySpeed() << endl;
+    FlyMonster fly2("Dragon2", 13, 3, 22,30 );
+    fly2.fly();
+    Monster m1;
+    m1.print();
+    fly2.print();
+
+    Monster m2 = FlyMonster();
+    //FlyMonster f1 = Monster("Spider");
+    Monster* pmonsters[] = { new Monster(), new FlyMonster(),new FlyMonster() };
+    for (Monster* m : pmonsters) {
+        m->print();
+    }
 
     /*//Task4
     Monster m1 = Monster();

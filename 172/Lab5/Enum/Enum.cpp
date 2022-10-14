@@ -3,9 +3,33 @@
 
 #include <iostream>
 #include "Move.h"
+using namespace std;
+
+struct Item {
+    string name;
+    string description;
+    int price = 0;
+    void print() {
+        cout << name << " " << description << " " << price << endl;
+    }
+};
+
+void print(Item& i) {
+    cout << i.name << " " << i.description << " " << i.price << endl;
+}
 
 int main()
 {
+    Item i;
+    Item i2 = { "description", "T-short" , 20 };
+    cout << i2.name << endl;
+    i2.print();
+    print(i);
+
+    i.name = "Short";
+    i.description = "enough description";
+    i.price = 20;
+    cout << i.name<<endl;
     setlocale(LC_ALL, "");
     Move::move(Direction::EAST);
 }
