@@ -17,7 +17,7 @@ int main()
 {
     setlocale(LC_ALL, "");
 
-    //Task4
+    /*//Task4
     Monster m1 = Monster();
     m1.setHealth(-10);
     cout << m1.getHealth() << endl;
@@ -34,7 +34,7 @@ int main()
     Monster m4;
     cout << Monster::counter << endl;
     Monster::resetCounter();
-    cout << Monster::counter << endl;
+    cout << Monster::counter << endl;*/
 
 
 
