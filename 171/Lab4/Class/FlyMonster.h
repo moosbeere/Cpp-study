@@ -11,5 +11,6 @@ public:
     float getFlySpeed();
     void fly();
     void print() override;
+    void attack(Monster* m) override;
 };
 

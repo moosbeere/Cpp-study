@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClInclude Include="AIMonster.h" />
     <ClInclude Include="FlyMonster.h" />
+    <ClInclude Include="CrawlingMonster.h" />
     <ClInclude Include="Monster.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

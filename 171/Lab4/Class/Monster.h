@@ -31,13 +31,14 @@ public:
     void setHealth(int health);
 
     int getLevel();
-
+    int getDamage();
+    string getName();
     void applyDamage(int damage);
 
     void applyDamage();
 
     void recovery();
 
-    void attack(Monster* m);
+    virtual void attack(Monster* m) = 0;
 };
 

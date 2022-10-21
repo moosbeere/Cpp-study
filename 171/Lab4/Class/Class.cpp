@@ -5,6 +5,7 @@
 #include "Monster.h"
 #include "AIMonster.h"
 #include "FlyMonster.h"
+#include "CrawlingMonster.h"
 
 using namespace std;
 
@@ -18,7 +19,18 @@ int Monster::counter = 0;
 int main()
 {
     setlocale(LC_ALL, "");
-    //Lab5 Task 1
+    //Lab5 Task 3
+    //Monster m; Ошибка создания объекта от абстрактного класса
+    FlyMonster fly("Dragon2", 20, 5, 50, 10);
+    FlyMonster f("Dragon", 20, 5, 50, 10);
+    fly.attack(&f);
+    f.print();
+    CrawlingMonster c;
+    c.attack(&f);
+
+
+
+   /* //Lab5 Task 1
     Monster m;
    // m.print();
     cout << "\n------------\n";
@@ -46,7 +58,7 @@ int main()
     FlyMonster fly2("Dragon 2", 10, 3, 20, 10);
     FlyMonster f3 = fly + fly2;
     f3.print();
-
+    */
 
     /*//4 Task
     Monster m1;

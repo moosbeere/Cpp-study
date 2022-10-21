@@ -27,6 +27,14 @@ void Monster::setHealth(int health)
 int Monster::getLevel() {
     return maxHealth / 5;
 }
+int Monster::getDamage()
+{
+    return this->damage;
+}
+string Monster::getName()
+{
+    return this->name;
+}
 void Monster::applyDamage(int damage) {
     health -= damage;
 }
@@ -38,6 +46,3 @@ void Monster::recovery() {
     health = maxHealth;
 }
 
-void Monster::attack(Monster* m) {
-    m->health = m->health - damage;
-}

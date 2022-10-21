@@ -32,3 +32,8 @@ void FlyMonster::print()
 	cout << flySpeed<<endl;
 }
 
+void FlyMonster::attack(Monster* m)
+{
+	m->applyDamage(this->getDamage());
+}
+
