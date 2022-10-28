@@ -24,6 +24,8 @@ void Monster::print()
 }
 Monster::Monster() : Monster("Spider", 20, 15, 50) {}
     Monster::~Monster() {
+        cout << endl;
+        cout << *this << "Delete" << endl;
     }
 
     int Monster::getHealth()
